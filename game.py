@@ -1,4 +1,4 @@
-from termcolor import colored
+
 import random
 
 class Game :
@@ -16,14 +16,14 @@ class Game :
     def crear_codigo(self) :
         print("Introduce el código secreto de 4 colores. Los colores disponibles son: red, blue, green, yellow.")
         while True :
-            codigo = input("Codigo (ejemplo :red, blue, green, yellow)").strip().split()
+            codigo = input("Codigo (ejemplo :red, blue, green, yellow) ").strip().split()
             if len(codigo) == 4 :
                 return codigo
             else :
-                print("Codigo invalido, asegurate de que sean 4 colores")
+                print("Codigo invalido, asegurate de que sean 4 colores ")
     def random_codigo(self) :
-        colors = ["red", "blue", "greed", "yellow"]
-        return [random.choice(colors) for i in range(4)]
+        self.colors = ["red", "blue", "greed", "yellow"]
+        return [random.choice(self.colors) for i in range(4)]
 
 jugador = Game()
 jugador.inicio()
