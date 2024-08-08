@@ -16,7 +16,7 @@ class Jugador_creador:
         else :
             print(f"No adivinaste el código secreto. El código era:", ' '.join(self.code))
     def obten_juga(self, adi):
-        jugadas = []
+        jugadas = [] 
         codi_copia = self.code[:]
         codi_adi = adi[:]
         for i in range(4) :
@@ -32,9 +32,6 @@ class Jugador_creador:
             jugadas.append("white")
         return jugadas
     
-    
-    
-    
 class Jugador_adivinador():
     def __init__(self, code, turnos_max, board) -> None:
         self.code = code
@@ -42,11 +39,9 @@ class Jugador_adivinador():
         self.board = board
         self.colores = ["red", "blue", "yellow", "green"]
     def jugar(self) :
-        print(self.turnos_max)
         for turnos in range(self.turnos_max) :
             adivi = self.hacer_adi()
             jugadas = self.obte_juga(adivi)
-            print(jugadas)
             self.board(turnos, adivi, jugadas)
             if jugadas == ["green", "green", "green", "green"] :
                 print("¡La computadora ha adivinado el código secreto!")
